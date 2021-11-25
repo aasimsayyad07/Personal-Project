@@ -1,2 +1,2 @@
 # Personal-Project
-Mine Academic Project 
+My Academic Project 
