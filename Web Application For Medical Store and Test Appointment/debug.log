@@ -1,0 +1,6 @@
+[0907/131806.833:ERROR:crashpad_client_win.cc(508)] CreateProcess: The paging file is too small for this operation to complete. (0x5AF)
+[0908/130925.939:ERROR:process_info.cc(359)] UncheckedAllocate
+[0908/130933.145:ERROR:process_info.cc(359)] UncheckedAllocate
+[0908/130947.094:ERROR:process_info.cc(359)] UncheckedAllocate
+[0915/123718.860:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[1024/105802.119:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
