@@ -1,0 +1,25 @@
+<?php
+$filepath=realpath(dirname("temperature"));
+require_once($filepath."/db_connect.php");
+$db=new DB_CONNECT();
+$result=mysql_query("SELECT * from dht11_status where id=(select max(id) from dht11_status)") or die(mysql_error());
+$response=array();
+if($result!=null)
+{
+    $row=mysql_fetch_array($result);
+    $response["id"]=$row["id"];
+    $response["temperature"]=$row["temperature"];
+    $response["humidity"]=$row["humidity"];
+    
+    $response["success"]=1;
+    
+    echo json_encode($response);
+}
+else
+{
+    $response["success"]=0;
+        echo json_encode($response);
+
+}
+
+?>
