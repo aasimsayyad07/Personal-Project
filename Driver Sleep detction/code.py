@@ -3,6 +3,7 @@ import dlib
 from skimage import io
 import numpy as np
 from scipy.spatial import distance 
+import RPi.GPIO as GPIO
 
 
 def compute_EAR(vec):
@@ -15,6 +16,8 @@ def compute_EAR(vec):
 
 	return ear
 
+BUZZER= 23
+buzzState = False
 
 
 if len(sys.argv) != 3:
@@ -59,6 +62,8 @@ for k, d in enumerate(dets):
 
         if (right_ear+left_ear)/2 <0.2: #if the avarage eye aspect ratio of lef and right eye less than 0.2, the status is sleeping.
               status="sleeping"
+		buzzState =True
+    		GPIO.output(BUZZER, buzzState)
 
         print(status)
         
